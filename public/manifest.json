@@ -1,6 +1,8 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "short_name": "React Neighborhood App",
+  "name": "Create React App Based",
+  "author": "Mateus Vilaverde",
+  "keywords": "HTML,CSS,JavaScript,React,Google Maps,Google Maps API",
   "icons": [
     {
       "src": "favicon.ico",

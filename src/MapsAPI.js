@@ -40,36 +40,48 @@ class MapsAPI extends Component {
                 zoom={16}
                 style={mapStyles}
                 initialCenter={{
-                    lat: -19.9331706,
-                    lng: -43.93874
+                    lat: -19.9408184,
+                    lng: -43.9355109
                 }}
-                //onClick={this.onMapClicked}
-
-                //The onReady prop is useful for fetching places or using the autocomplete API for places.
             >
 
                 <Marker onClick = {this.onMarkerClick}
                     title={'Jack Rock Bar'}
                     name={'Jack Rock Bar'}
                     position={{lat: -19.9397354, lng: -43.9318726}}
-                    rate={4}
                 />
 
                 <Marker onClick = {this.onMarkerClick}
-                    title={'Stadt Jever'}
-                    name={'Stadt Jever'}
-                    position={{lat: -19.9399758, lng: -43.933347}}
-                    rate={5}
+                    title={'Lord Pub'}
+                    name={'Lord Pub'}
+                    position={{lat: -19.9402615, lng: -43.9365341}}
+                />
+
+                <Marker onClick = {this.onMarkerClick}
+                    title={'Estágio Rock Bar'}
+                    name={'Estágio Rock Bar'}
+                    position={{lat: -19.941599, lng: -43.937418}}
                 />
                 
+                <Marker onClick = {this.onMarkerClick}
+                    title={'Beb\'s Contorno'}
+                    name={'Beb\'s Contorno'}
+                    position={{lat: -19.9407569, lng: -43.9363852}}
+                />
+
+                <Marker onClick = {this.onMarkerClick}
+                    title={'Rock Esporte Clube'}
+                    name={'Rock Esporte Clube'}
+                    position={{lat: -19.9403498, lng: -43.9380091}}
+                />
+
                 <InfoWindow
                     marker={this.state.activeMarker}
                     visible={this.state.showingInfoWindow}
                     onClose={this.onClose}
                 >
                     <div>
-                        <h4>{this.state.selectedPlace.name}</h4>
-                        <p>{this.state.selectedPlace.rate}</p>
+                        <h4>Name: {this.state.selectedPlace.name}</h4>
                     </div>
                 </InfoWindow>
             </Map>

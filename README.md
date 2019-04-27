@@ -45,3 +45,4 @@ You don’t have to ever use `eject`. The curated feature set is suitable for sm
 
 *[npm's google-maps-react](https://www.npmjs.com/package/google-maps-react)
 *[Rachael Njeri's React Apps with the Google Maps API and google-maps-react](https://scotch.io/tutorials/react-apps-with-the-google-maps-api-and-google-maps-react)
+*[Sarah Frisk's Style](https://snazzymaps.com/style/72543/assassins-creed-iv)

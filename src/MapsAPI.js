@@ -8,18 +8,41 @@ const mapStyles = {
 }
 
 class MapsAPI extends Component {
-
     state = {
         showingInfoWindow: false, //Hides or shows the infoWindow
         activeMarker: {}, //Shows the active marker upon click
         selectedPlace: {} //Shows the infoWindow to the selected place upon a marker
     }
 
+    markers = [
+        {
+            title: 'Jack Rock Bar',
+            position: {lat: -19.9397354, lng: -43.9318726},
+            isMarkerShown: true
+        }, {
+            title: 'Lord Pub',
+            position: {lat: -19.9402615, lng: -43.9365341},
+            isMarkerShown: true
+        }, {
+            title: 'Estágio Rock Bar',
+            position: {lat: -19.941599, lng: -43.937418},
+            isMarkerShown: true
+        }, {
+            title: 'Beb\'s Contorno',
+            position: {lat: -19.9407569, lng: -43.9363852},
+            isMarkerShown: true
+        }, {
+            title: 'Rock Esporte Clube',
+            position: {lat: -19.9403498, lng: -43.9380091},
+            isMarkerShown: true
+        }
+    ]
+
     onMarkerClick = (props, marker, e) => {
         this.setState({
-        selectedPlace: props,
-        activeMarker: marker,
-        showingInfoWindow: true
+            selectedPlace: props,
+            activeMarker: marker,
+            showingInfoWindow: true
         })
     }
 
@@ -31,7 +54,6 @@ class MapsAPI extends Component {
             })
         }
     }
-
     
     render() {
         return (
@@ -45,6 +67,15 @@ class MapsAPI extends Component {
                 }}
             >
 
+                {this.markers.map((marker, index) =>
+                    <Marker
+                        onClick = {this.onMarkerClick}
+                        position={marker.position}
+                        title={marker.title}
+                        key={index}
+                    ></Marker>
+                )}
+{/*
                 <Marker onClick = {this.onMarkerClick}
                     title={'Jack Rock Bar'}
                     name={'Jack Rock Bar'}
@@ -73,7 +104,7 @@ class MapsAPI extends Component {
                     title={'Rock Esporte Clube'}
                     name={'Rock Esporte Clube'}
                     position={{lat: -19.9403498, lng: -43.9380091}}
-                />
+/> */}
 
                 <InfoWindow
                     marker={this.state.activeMarker}
@@ -81,7 +112,7 @@ class MapsAPI extends Component {
                     onClose={this.onClose}
                 >
                     <div>
-                        <h4>Name: {this.state.selectedPlace.name}</h4>
+                        <h4>Name: {this.state.selectedPlace.title}</h4>
                     </div>
                 </InfoWindow>
             </Map>
@@ -90,5 +121,5 @@ class MapsAPI extends Component {
 }
 
 export default GoogleApiWrapper({
-    apiKey: 'AIzaSyDSZ_E9TrZt4ijbTAcpxJCXTqdZ5VhQwj0'
+    apiKey: 'AIzaSyAOFG5MfWrnTNAlxiYoko5BOd6s5RTHrhY'
 })(MapsAPI);
